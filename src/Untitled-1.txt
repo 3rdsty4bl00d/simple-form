@@ -1,0 +1,33 @@
+<div class="row">
+                       <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+                           <!--Header of the form-->
+                           <h3>Please fill the form!</h3>
+                           
+                       </div>
+                   </div>
+                   
+                   
+                   
+                   
+                   
+                   
+                   
+                   
+                   
+                   <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3>Your Data</h3>
+                            </div>
+                            <div class="panel-body">
+                                <p>First Name: {{ firstName }}</p>
+                                <p>Last Name: {{ lastName }}</p>
+                                <p>Email: {{ email }}</p>
+                                <p>Password: {{ password }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
