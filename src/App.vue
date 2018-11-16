@@ -78,14 +78,12 @@
                             <h3 class="text-center">Please fill the form!</h3>
                             <hr>
                             <!--Introduction of user-->
-                            <transition name="fade">
-                                <div class="form-group">
-                                    <label for="name">
-                                        First Name
-                                    </label>
-                                    <input type="text" id="first-name" class="form-control" v-model.lazy="firstName">
-                                </div>
-                            </transition>
+                            <div class="form-group">
+                                <label for="name">
+                                    First Name
+                                </label>
+                                <input type="text" id="first-name" class="form-control" v-model.lazy="firstName">
+                            </div>
                             <div class="form-group">
                                 <label for="name">
                                     Last Name
@@ -467,23 +465,6 @@
             this is the margin of proficiency
         */
         margin-left: 35%
-    }
-    
-    .fade-enter {
-        opacity: 0;
-    }
-    
-    .fade-enter-active {
-        transition: opacity 1s;
-    }.
-    
-    .fade-leave {
-        /*transition: opacity 1s;*/
-    }
-    
-    .fade-leave-active {
-        transition: opacity 1s;
-        opacity: 0;
     }
 
 </style>
