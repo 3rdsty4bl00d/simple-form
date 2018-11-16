@@ -1,18 +1,74 @@
+<!--
+      this is the template of html
+      with the help of template we
+      can use vue.js
+  -->
+<!--
+      note to remember:
+      ==> the parts inside the template file
+      should be wrapped inside one div
+      ==> there will occur an error
+      if there two or more than two
+      elements
+      ==>here vue.js directives are used
+            like
+                v-model: it will give you two way binding
+                v-model.lazy: it will upload your data once you finished inputing it
+                v-if: you know the drill
+                v-else: again it's the same
+                    but the (v-if v-else) must be 
+                    in the consecutive same type element
+                v-on:click or @click: it will give you direction to 
+                                        the attached vue.js function
+      ==>here bootstrap is used
+          the bootstrap that i used is max bootstrap
+          i have used it with the help of a cdn link
+      ==>the classes that i used are
+          form-control
+          from-group
+          panel
+          panel-default
+          panel=heading
+          panel-body
+          ==> these bootstrap classes will help 
+              to make the form look better
+      ==>also the column classes are
+         ==> these are all from left side
+              col-sm-8: for small devices
+              col-xs-12: for extra small devices
+              col-md-6: for medium devices
+         ==> these are from right side
+             col-sm-offset-2: for small devices
+             col-md-offset-3: for medium devices
+         ==> this will help you keep you data 
+             or form right in the exact middle
+  -->
+  
+  <!--
+      ================================
+      ********************************
+      ================================
+      ********************************
+      this was created by 3rdsty4bl00d
+      name == > Shivam Shrestha
+      ********************************
+      ================================
+      ********************************
+      ================================
+  -->
+  
 <template>
     <div id="all-together">
-       <!--
+        <!--
            this is the first check of the form
        -->
-       
-       <!--
+        <!--
            it contains 
            first name
            lastname
            email
            password of the user
        -->
-       
-       
         <div id="please-fill-the-form" v-if="isSubmitted">
             <div class="container">
                 <form action="userFirstForm" class="top-margin">
@@ -52,14 +108,12 @@
                                 </label>
                                 <input type="password" id="re-password" class="form-control" v-model.lazy="rePassword">
                             </div>
-                            
                             <!--
                                 this is a button called next
                                 it takes the user to next page called
                                 some more
                                 which asks for more user data
                             -->
-                            
                             <div id="form-button">
                                 <button class="btn btn-primary" @click.prevent="submitted">Next</button>
                             </div>
@@ -75,20 +129,16 @@
             and
             address of the user
             -->
-            
-            <!--
+        <!--
                 here isSubmitted is the function used to 
                 see if the v-else will activate or not.
                 agSubmitted has the same functionality.
                 -->
-                
-            <!--
+        <!--
                 also a button called next
                 which takes the user to another page
                 called 'your proficiency?'
                 which will ask what the user proficiency has
-                
-                
             -->
         <div id="form-second" v-else="isSubmitted = !isSubmitted">
             <div id="some-more" v-if="agSubmitted">
@@ -128,7 +178,6 @@
                                             Address
                                         </label>
                                     </div>
-
                                 </div>
                                 <div class="row">
                                     <div class="col-md-12 text-area-margin">
@@ -141,14 +190,11 @@
                             </div>
                         </div>
                     </form>
-
                 </div>
             </div>
-            
             <!--
                 this is the proficiency part
                 proficiency: having certain skill
-                
                 here I built a form that gives the information 
                 of a user at what skill set he/she has
                 like
@@ -159,14 +205,12 @@
                 android developer
                 ios developer
             -->
-            
             <!--
                 also a button called submit
                 that takes the user to another page
                 that gives the information about the user
                 which he/she just filled
             -->
-            
             <div id="your-proficiency" v-else="agSubmitted = !agSubmitted">
                 <div id="proficient" v-if="againSubmitted">
                     <div class="container">
@@ -208,29 +252,22 @@
                                         </label>
                                     </div>
                                 </div>
-
                             </div>
                         </form>
                         <!--
                             this is the button
                             called submit
-                            
                         -->
-                        
                         <div class="row">
                             <div class="col-md-6 col-xs-12 col-sm-8 col-sm-offset-2 col-md-offset-3">
                                 <button class="btn btn-primary proficiency-margin" @click.prevent="againnSubmitted">submit</button>
                             </div>
                         </div>
-
                     </div>
-
                 </div>
-                
                 <!--
                     this is the page to show the 
                     user information
-                    
                     it contains 
                     first name
                     last name
@@ -273,6 +310,17 @@
         </div>
     </div>
 </template>
+<!--
+    this is the script tag of above html
+    in this sript tag 
+    I have used javascript
+    more specifically, vue.js, i.e
+    framework of javascript 
+-->
+<!--
+    feel free to edit it
+    as you like
+-->
 <script>
     export default {
         data() {
@@ -300,7 +348,6 @@
                 these are all the functions
                 that is called by html file
                 that is above 
-                
             */
             submitted() {
                 /*
@@ -309,8 +356,7 @@
                     called by next button of the page
                     called by button of 'please fill your form! page
                 */
-                
-                if (this.password != this.rePassword) { 
+                if (this.password != this.rePassword) {
                     /*
                         this checks the password 
                         that is 
@@ -318,16 +364,13 @@
                         if they donot match it will alert the user
                         'your passwords doesnot match'
                     */
-                    
                     alert("Your paswords doesnot match!");
-
                 } else {
                     /*
                         this will check if the user inputed 
                         the password that is less than 10 characters
                     */
-                    
-                    if(this.password.length <= 10) {
+                    if (this.password.length <= 10) {
                         alert("Your password must be more than 10 characters.")
                     } else {
                         /*
@@ -336,22 +379,17 @@
                             only then can we
                             move on to next page
                         */
-                        
                         this.isSubmitted = false;
                     }
-                    
                 }
-
             },
             aggSubmitted() {
                 /*
                     this is the second page
                     function call
                     called by next button of the page
-                    
                     called by button of some more page
                 */
-                
                 this.agSubmitted = false;
             },
             againnSubmitted() {
@@ -361,42 +399,70 @@
                     called by submit button of the page
                     called by button of your proficiency? page
                 */
-                
                 this.againSubmitted = false;
             }
         }
     }
 
 </script>
+<!--
+    this is the style
+    all the css is written here
+    here 
+    classes are activated with the help of dot(.)
+    and id's are activated with the help of hash(#)
+    feel free to edit it as you like
+-->
 <style>
     .panel {
         /*
             gives the top margin
             50px of gaping
             above the heading
+            this is the margin of your data page
         */
         margin-top: 50px;
     }
 
     .top-margin {
+        /*
+            this is the margin of the second form
+        */
         margin-top: 50px;
     }
 
     .text-area-margin {
+        /*
+            this is the margin
+            of address name
+            it is the bottom margin
+        */
         margin-bottom: 15px;
     }
 
     .gender-margin {
+        /*
+            it is the gernder
+            margin
+            both top and bottom
+        */
         margin-top: 10px;
         margin-bottom: 10px;
     }
 
     .address-name {
+        /*
+            this is the margin of 
+            textarea address
+        */
         margin-top: 10px;
         margin-bottom: 5px;
     }
 
     .proficiency-margin {
+        /*
+            this is the margin of proficiency
+        */
         margin-left: 35%
     }
 
