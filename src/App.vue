@@ -1,5 +1,18 @@
 <template>
     <div id="all-together">
+       <!--
+           this is the first check of the form
+       -->
+       
+       <!--
+           it contains 
+           first name
+           lastname
+           email
+           password of the user
+       -->
+       
+       
         <div id="please-fill-the-form" v-if="isSubmitted">
             <div class="container">
                 <form action="userFirstForm" class="top-margin">
@@ -39,6 +52,14 @@
                                 </label>
                                 <input type="password" id="re-password" class="form-control" v-model.lazy="rePassword">
                             </div>
+                            
+                            <!--
+                                this is a button called next
+                                it takes the user to next page called
+                                some more
+                                which asks for more user data
+                            -->
+                            
                             <div id="form-button">
                                 <button class="btn btn-primary" @click.prevent="submitted">Next</button>
                             </div>
@@ -47,6 +68,28 @@
                 </form>
             </div>
         </div>
+        <!--second page of the form
+            here it contains
+            age
+            gender
+            and
+            address of the user
+            -->
+            
+            <!--
+                here isSubmitted is the function used to 
+                see if the v-else will activate or not.
+                agSubmitted has the same functionality.
+                -->
+                
+            <!--
+                also a button called next
+                which takes the user to another page
+                called 'your proficiency?'
+                which will ask what the user proficiency has
+                
+                
+            -->
         <div id="form-second" v-else="isSubmitted = !isSubmitted">
             <div id="some-more" v-if="agSubmitted">
                 <div class="container">
@@ -101,6 +144,29 @@
 
                 </div>
             </div>
+            
+            <!--
+                this is the proficiency part
+                proficiency: having certain skill
+                
+                here I built a form that gives the information 
+                of a user at what skill set he/she has
+                like
+                front-end developer
+                back-end developer
+                java developer
+                graphics designer
+                android developer
+                ios developer
+            -->
+            
+            <!--
+                also a button called submit
+                that takes the user to another page
+                that gives the information about the user
+                which he/she just filled
+            -->
+            
             <div id="your-proficiency" v-else="agSubmitted = !agSubmitted">
                 <div id="proficient" v-if="againSubmitted">
                     <div class="container">
@@ -145,6 +211,12 @@
 
                             </div>
                         </form>
+                        <!--
+                            this is the button
+                            called submit
+                            
+                        -->
+                        
                         <div class="row">
                             <div class="col-md-6 col-xs-12 col-sm-8 col-sm-offset-2 col-md-offset-3">
                                 <button class="btn btn-primary proficiency-margin" @click.prevent="againnSubmitted">submit</button>
@@ -154,6 +226,21 @@
                     </div>
 
                 </div>
+                
+                <!--
+                    this is the page to show the 
+                    user information
+                    
+                    it contains 
+                    first name
+                    last name
+                    email
+                    password
+                    age
+                    gender
+                    address
+                    proficiency
+                -->
                 <div id="your-data" v-else="againSubmitted = !againSubmitted">
                     <div class="container">
                         <div class="row">
@@ -189,6 +276,10 @@
 <script>
     export default {
         data() {
+            /*
+                this is the data
+                all the data is stored here in this function
+            */
             return {
                 isSubmitted: true,
                 agSubmitted: true,
@@ -205,14 +296,47 @@
             }
         },
         methods: {
+            /*
+                these are all the functions
+                that is called by html file
+                that is above 
+                
+            */
             submitted() {
+                /*
+                    this is the first page
+                    function call
+                    called by next button of the page
+                    called by button of 'please fill your form! page
+                */
+                
                 if (this.password != this.rePassword) { 
+                    /*
+                        this checks the password 
+                        that is 
+                        password and re-typer password
+                        if they donot match it will alert the user
+                        'your passwords doesnot match'
+                    */
+                    
                     alert("Your paswords doesnot match!");
 
                 } else {
+                    /*
+                        this will check if the user inputed 
+                        the password that is less than 10 characters
+                    */
+                    
                     if(this.password.length <= 10) {
                         alert("Your password must be more than 10 characters.")
                     } else {
+                        /*
+                            once everything is right
+                            isSubmitted will be true
+                            only then can we
+                            move on to next page
+                        */
+                        
                         this.isSubmitted = false;
                     }
                     
@@ -220,9 +344,24 @@
 
             },
             aggSubmitted() {
+                /*
+                    this is the second page
+                    function call
+                    called by next button of the page
+                    
+                    called by button of some more page
+                */
+                
                 this.agSubmitted = false;
             },
             againnSubmitted() {
+                /*
+                    this is the third page
+                    function call
+                    called by submit button of the page
+                    called by button of your proficiency? page
+                */
+                
                 this.againSubmitted = false;
             }
         }
@@ -231,6 +370,11 @@
 </script>
 <style>
     .panel {
+        /*
+            gives the top margin
+            50px of gaping
+            above the heading
+        */
         margin-top: 50px;
     }
 
