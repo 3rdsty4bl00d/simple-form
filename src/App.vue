@@ -43,8 +43,8 @@
          ==> this will help you keep you data 
              or form right in the exact middle
   -->
-  
-  <!--
+
+<!--
       ================================
       ********************************
       ================================
@@ -56,7 +56,7 @@
       ********************************
       ================================
   -->
-  
+
 <template>
     <div id="all-together">
         <!--
@@ -78,12 +78,14 @@
                             <h3 class="text-center">Please fill the form!</h3>
                             <hr>
                             <!--Introduction of user-->
-                            <div class="form-group">
-                                <label for="name">
-                                    First Name
-                                </label>
-                                <input type="text" id="first-name" class="form-control" v-model.lazy="firstName">
-                            </div>
+                            <transition name="fade">
+                                <div class="form-group">
+                                    <label for="name">
+                                        First Name
+                                    </label>
+                                    <input type="text" id="first-name" class="form-control" v-model.lazy="firstName">
+                                </div>
+                            </transition>
                             <div class="form-group">
                                 <label for="name">
                                     Last Name
@@ -365,6 +367,7 @@
                         'your passwords doesnot match'
                     */
                     alert("Your paswords doesnot match!");
+
                 } else {
                     /*
                         this will check if the user inputed 
@@ -464,6 +467,23 @@
             this is the margin of proficiency
         */
         margin-left: 35%
+    }
+    
+    .fade-enter {
+        opacity: 0;
+    }
+    
+    .fade-enter-active {
+        transition: opacity 1s;
+    }.
+    
+    .fade-leave {
+        /*transition: opacity 1s;*/
+    }
+    
+    .fade-leave-active {
+        transition: opacity 1s;
+        opacity: 0;
     }
 
 </style>
